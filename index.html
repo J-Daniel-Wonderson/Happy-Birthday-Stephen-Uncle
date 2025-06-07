@@ -47,8 +47,7 @@
       </div>
     </div>
 
-    <!-- 🎉 Open Button -->
-    <button id="openCardBtn">Click</button>
+    <button id="openCardBtn">Open</button>
   </div>
 
   <img src="4SHX.gif" alt="cat" class="cat" />
@@ -56,8 +55,14 @@
   <script>
     const card = document.getElementById('card');
     const button = document.getElementById('openCardBtn');
+
     button.addEventListener('click', () => {
       card.classList.toggle('opened');
+      if (card.classList.contains('opened')) {
+        button.textContent = 'Close';
+      } else {
+        button.textContent = 'Open';
+      }
     });
   </script>
 </body>
