@@ -46,6 +46,7 @@ img {
     transition: 4s;
 }
 
+/* Open by hover */
 .birthdayCard:hover {
     transform: perspective(2500px) rotate(5deg);
     box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
@@ -59,6 +60,23 @@ img {
 .birthdayCard:hover .wrap-deco,
 .birthdayCard:hover .wrap-decoTwo,
 .birthdayCard:hover .plate {
+    display: none;
+}
+
+/* Open by click */
+.birthdayCard.opened {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
+}
+
+.birthdayCard.opened .cardFront {
+    transform: rotateY(-160deg);
+}
+
+.birthdayCard.opened .front-text,
+.birthdayCard.opened .wrap-deco,
+.birthdayCard.opened .wrap-decoTwo,
+.birthdayCard.opened .plate {
     display: none;
 }
 
@@ -271,37 +289,20 @@ p {
     margin-left: 150px;
 }
 
-/* 🔘 Button styling */
 #openCardBtn {
     margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    background-color: #ff69b4;
+    padding: 10px 25px;
+    font-size: 17px;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ff69b4, #ff1493);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 #openCardBtn:hover {
-    background-color: #ff1493;
-}
-
-/* 📱 Open effect via button */
-.birthdayCard.opened {
-    transform: perspective(2500px) rotate(5deg);
-    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
-}
-
-.birthdayCard.opened .cardFront {
-    transform: rotateY(-160deg);
-}
-
-.birthdayCard.opened .front-text,
-.birthdayCard.opened .wrap-deco,
-.birthdayCard.opened .wrap-decoTwo,
-.birthdayCard.opened .plate {
-    display: none;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
 }
